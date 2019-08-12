@@ -1,2 +1,2 @@
 # Lowkey-Tho...
-A very fun social game.
+A social card game inspired by and surpassing cards againist humnaity one line of code at a time.
