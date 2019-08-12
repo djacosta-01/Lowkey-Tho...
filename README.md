@@ -1,2 +1,2 @@
 # Lowkey-Tho...
-A social card game inspired by and surpassing cards againist humnaity one line of code at a time.
+A social card game inspired by and surpassing cards against humanity one line of code at a time.
