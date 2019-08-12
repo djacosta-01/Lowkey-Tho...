@@ -5,27 +5,8 @@ body{
   background-position: center;
   background-attachment: fixed;
   height: 100vh;
-}
-
-#username{
-  color: white;
-  text-align: center;
-}
-
-#input{
-  text-align: center;
-
-}
-#submit{
-  text-align: center;
-}
-
-#ground-rules{
-  background-color: rgba(255, 255, 0, 0.6);
-}
-body {
   display: flex;
-  justify-content: center;
+  align-items: center;
   max-height: 100vh;
   flex-direction: column;
   width: 100vw;
@@ -33,6 +14,7 @@ body {
 
 img{
   max-height: 20vh;
+  padding: 30px;
 }
 
 form {
@@ -40,6 +22,9 @@ form {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 20px;
+  width: 30vw;
 }
 
 #timer {
@@ -59,4 +44,23 @@ form {
   background-color: blue;
   align-items: center;
   justify-content: center;
+}
+
+#username{
+  color: white;
+  text-align: center;
+}
+
+#input{
+  text-align: center;
+
+}
+#submit {
+  text-align: center;
+}
+
+#ground_rules {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  margin: 20px;
 }
