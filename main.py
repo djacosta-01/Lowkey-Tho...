@@ -18,7 +18,9 @@ class GamePage(webapp2.RequestHandler):
         template = the_jinja_env.get_template('templates/game.html')
         self.response.write("Username: {}".format(username))
         self.response.write(template.render())
-
+    def get(self):
+        template = the_jinja_env.get_template('templates/game.html')
+        self.response.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),

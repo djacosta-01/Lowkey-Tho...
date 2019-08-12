@@ -1,13 +1,35 @@
 body {
-  padding: 20px;
-  margin: 20px;
   display: flex;
+  justify-content: center;
+  max-height: 100vh;
   flex-direction: column;
+  width: 100vw;
 }
-
+img{
+  max-height: 20vh;
+}
 form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+#timer {
+  background-color: purple;
+  align-items: flex-start;
+}
+
+#prompt-card {
+  display: flex;
+  background-color: green;
+  align-items: center;
+  justify-content: center;
+}
+
+#user-input {
+  display: flex;
+  background-color: blue;
+  align-items: center;
+  justify-content: center;
 }
