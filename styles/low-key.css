@@ -4,6 +4,10 @@ body {
   max-height: 100vh;
   flex-direction: column;
   width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 img{
   max-height: 20vh;
