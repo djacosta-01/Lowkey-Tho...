@@ -13,8 +13,10 @@ class MainPage(webapp2.RequestHandler):
         self.response.write(template.render())
 
 class GamePage(webapp2.RequestHandler):
-    def get(self):
+    def post(self):
+        username = self.request.get('query')
         template = the_jinja_env.get_template('templates/game.html')
+        self.response.write("Username: {}".format(username))
         self.response.write(template.render())
 
 
