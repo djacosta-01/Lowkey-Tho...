@@ -8,7 +8,7 @@ the_jinja_env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-class MainPage(webapp2.RequestHandler):
+class LoginPage(webapp2.RequestHandler):
     def get(self):
         template = the_jinja_env.get_template('templates/main.html')
         self.response.write(template.render())
@@ -42,10 +42,14 @@ class ResultsPage(webapp2.RequestHandler):
         template = the_jinja_env.get_template('templates/results.html')
         self.response.write(template.render())
 
-
+class SelectorPage(webapp2.RequestHandler):
+    def get(self):
+        template = the_jinja_env.get_template('templates/session-selector.html')
+        self.response.write(template.render())
 
 app = webapp2.WSGIApplication([
-    ('/', MainPage),
+    ('/', SelectorPage),
+    ('/login', LoginPage),
     ('/game', GamePage),
     ('/results', ResultsPage)
 ], debug=True)
