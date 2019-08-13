@@ -1,6 +1,7 @@
 import webapp2
 import jinja2
 import os
+import cards
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -18,6 +19,10 @@ class GamePage(webapp2.RequestHandler):
         template = the_jinja_env.get_template('templates/game.html')
         self.response.write("Username: {}".format(username))
         self.response.write(template.render())
+        prompt = get_card()
+        self.response.write("prompt: { }".format(prompt))
+        template = the_jinja_env.get_template('templates/results.html')
+        self.response.write(template.render())
     def get(self):
         template = the_jinja_env.get_template('templates/game.html')
         self.response.write(template.render())
@@ -32,6 +37,9 @@ class ResultsPage(webapp2.RequestHandler):
         self.response.write("Your answer: {}".format(answer))
         template = the_jinja_env.get_template('templates/results.html')
         self.response.write(template.render())
+
+
+
 
 
 
