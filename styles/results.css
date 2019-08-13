@@ -8,19 +8,19 @@ body {
   padding: 0px;
   margin: 0px;
   font-family: monospace;
-
-
 }
-
 #input-cards {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
- .other-card{
+ .card{
   background-color: pink;
   width: 300px;
   height: 150px;
   margin: 20px;
+}
+.card:hover{
+  box-shadow: 3px 3px 3px black;
+  text-shadow: 2px 2px 2px white;
 }
