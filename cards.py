@@ -1,6 +1,7 @@
 import random *
 
 
+
 cards = ['Low-key though...','']
 
 class user:
@@ -13,7 +14,8 @@ p1 = user("John", 36)
 
 <<<<<<< HEAD
 def make_card(promt):
-    cards.append(promt
+    cards.append(promt)
+
 
 def get_card():
     cards[random.randint(0,len(cards))]
