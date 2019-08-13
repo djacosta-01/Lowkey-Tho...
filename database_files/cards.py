@@ -1,17 +1,5 @@
 import random
 
-
-
-
-class user:
-  def __init__(self, name, accont):
-    self.name = name
-    self.accont = accont
-
-p1 = user("John", 36)
-
-
-
 def make_card(promt):
     cards.append(promt)
 
