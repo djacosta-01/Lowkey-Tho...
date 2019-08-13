@@ -1,7 +1,7 @@
 import webapp2
 import jinja2
 import os
-import cards
+from cards import get_card
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -16,16 +16,20 @@ class MainPage(webapp2.RequestHandler):
 class GamePage(webapp2.RequestHandler):
     def post(self):
         username = self.request.get('query')
+        card = {
+        "prompt": get_card()
+        }
         template = the_jinja_env.get_template('templates/game.html')
         self.response.write("Username: {}".format(username))
-        self.response.write(template.render())
-        prompt = get_card()
-        self.response.write("prompt: { }".format(prompt))
-        template = the_jinja_env.get_template('templates/results.html')
-        self.response.write(template.render())
-    def get(self):
-        template = the_jinja_env.get_template('templates/game.html')
-        self.response.write(template.render())
+        self.response.write(template.render(card))
+
+        #card = {
+        #"prompt": get_card()
+        #}
+        ##*self.response.write(template.render(card))
+    #def get(self):
+        #template = the_jinja_env.get_template('templates/game.html')
+        #self.response.write(template.render())
 
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
