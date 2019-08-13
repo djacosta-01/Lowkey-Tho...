@@ -30,6 +30,11 @@ class ResultsPage(webapp2.RequestHandler):
         template = the_jinja_env.get_template('templates/results.html')
         self.response.write(template.render())
 
+ 
+
+
+
+
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/game', GamePage),
