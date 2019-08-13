@@ -1,7 +1,7 @@
 import webapp2
 import jinja2
 import os
-from cards import get_card
+from database_files.cards import get_card
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
