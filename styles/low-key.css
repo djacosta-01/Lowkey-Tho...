@@ -23,17 +23,15 @@ body{
 
 #prompt-card {
   background-color: green;
-  width: 150px;
-  height: 100px;
+  width: 300px;
+  height: 150px;
   margin: 20px;
   padding:20px;
 }
 
-
 #username{
   color: black;
   text-align: center;
-
 }
 
 #input{
@@ -80,4 +78,9 @@ body{
 input #card-input {
   width: 300px;
   height: 500px;
+}
+
+#prompt-container {
+  display: flex;
+  justify-content: center;
 }
