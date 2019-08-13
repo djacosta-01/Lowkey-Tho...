@@ -10,11 +10,12 @@ body {
   font-family: monospace;
 }
 
-#timer {
- background-color: purple;
+#clockdiv {
  align-items: flex-start;
  color: white;
  padding: 20px;
+ font-size: 20px;
+ color: black;
 }
 #prompt-card {
   display: flex;
