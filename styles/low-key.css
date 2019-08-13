@@ -1,107 +1,70 @@
-<<<<<<< HEAD
-
 body{
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100vh;
-=======
-body {
->>>>>>> 9a88fc7e57fef8dff9f3be546a02f9b401d606f4
-  display: flex;
-  max-height: 100vh;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 100vw;
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-attachment: fixed;
+ height: 100vh;
 }
-
-img {
-  max-height: 20vh;
-  padding: 30px;
-}
-<<<<<<< HEAD
-
-form {
-=======
 .username {
->>>>>>> 9a88fc7e57fef8dff9f3be546a02f9b401d606f4
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.6);
-  width: 30vw;
-  margin:auto;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ background-color: rgba(255, 255, 255, 0.6);
+ width: 30vw;
+ margin:auto;
 }
-
 #timer {
-  background-color: purple;
-  align-items: flex-start;
+ background-color: purple;
+ align-items: flex-start;
 }
-
 #prompt-card {
-  background-color: green;
-  width: 30vw;
-  height: 20vh;
-  margin: 20px;
-  padding:20px;
+ background-color: green;
+ width: 150px;
+ height: 100px;
+ margin: 20px;
+ padding:20px;
 }
-
-#user-input {
-  background-color: blue;
-  width: 30vw;
-  height: 20vh;
-  padding: 20px;
-  margin:20px;
-}
-
 #username{
-  color: black;
-<<<<<<< HEAD
-=======
-  text-align: center;
-
+ color: black;
+ text-align: center;
 }
-
 #input{
-  text-align: center;
+ text-align: center;
 }
 #submit {
-  text-align: center;
->>>>>>> 8d47715b6555cb1f67d0ce12ae16cf5cac493c4c
+ text-align: center;
 }
-
 #ground_rules {
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 20px;
-  margin: 20px;
+ background-color: rgba(255, 255, 255, 0.6);
+ padding: 20px;
+ margin: 20px;
 }
-<<<<<<< HEAD
-.how_to_play{
-  display:flex;
-  align-items: flex-end;
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 20px;
-  margin: 20px;
-=======
-
-#how_to_play {
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 20px;
-  margin: 20px;
-  margin-top: 80px;
+.how_to_play {
+ background-color: rgba(255, 255, 255, 0.6);
+ padding: 20px;
+ margin: 20px;
+ margin-top: 80px;
 }
-
- #input-cards {
-  display: flex;
-  flex-direction: column;
+#input-cards {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
 }
-
-.other-cards {
-    background-color: pink;
-    width: 20vw;
-    height: 15vh;
->>>>>>> 8d47715b6555cb1f67d0ce12ae16cf5cac493c4c
+.other-card{
+ background-color: pink;
+ width: 300px;
+ height: 150px;
+ margin: 20px;
+}
+#user-input {
+ background-color: blue;
+ width: 30vw;
+ height: 20vh;
+ padding: 20px;
+ margin:20px;
+}
+input #card-input {
+ width: 300px;
+ height: 500px;
 }
