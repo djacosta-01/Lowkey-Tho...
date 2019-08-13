@@ -1,32 +1,12 @@
-<<<<<<< HEAD
-
 body{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   height: 100vh;
-=======
-body {
->>>>>>> 9a88fc7e57fef8dff9f3be546a02f9b401d606f4
-  display: flex;
-  max-height: 100vh;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 100vw;
 }
 
-img {
-  max-height: 20vh;
-  padding: 30px;
-}
-<<<<<<< HEAD
-
-form {
-=======
 .username {
->>>>>>> 9a88fc7e57fef8dff9f3be546a02f9b401d606f4
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,19 +23,12 @@ form {
 
 #prompt-card {
   background-color: green;
-  width: 30vw;
-  height: 20vh;
+  width: 150px;
+  height: 100px;
   margin: 20px;
   padding:20px;
 }
 
-#user-input {
-  background-color: blue;
-  width: 30vw;
-  height: 20vh;
-  padding: 20px;
-  margin:20px;
-}
 
 #username{
   color: black;
@@ -85,11 +58,26 @@ form {
 
  #input-cards {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
 }
 
-.other-cards {
-    background-color: pink;
-    width: 20vw;
-    height: 15vh;
+.other-card{
+  background-color: pink;
+  width: 300px;
+  height: 150px;
+  margin: 20px;
+}
+
+#user-input {
+  background-color: blue;
+  width: 30vw;
+  height: 20vh;
+  padding: 20px;
+  margin:20px;
+}
+
+input #card-input {
+  width: 300px;
+  height: 500px;
 }
