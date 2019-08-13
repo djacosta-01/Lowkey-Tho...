@@ -1,23 +1,22 @@
 body {
- background-size: cover;
- background-repeat: no-repeat;
- background-position: center;
- background-attachment: fixed;
- height: 100vh;
-}
-.usernameBox {
- display: flex;
- align-items: center;
- justify-content: center;
- flex-direction: column;
- background-color: rgba(255, 255, 255, 0.6);
- width: 30vw;
- margin:auto;
+  background-image: url("/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+  font-family: monospace;
 }
 
 #username {
   color: black;
   text-align: center;
+}
+
+.usernameB {
+  padding-top: 100px;
 }
 
 #input {
@@ -27,23 +26,40 @@ body {
 #submit {
  text-align: center;
 }
-#ground_rules {
- background-color: rgba(255, 255, 255, 0.6);
- padding: 20px;
- margin: 20px;
-}
 
-.how_to_play {
- background-color: rgba(255, 255, 255, 0.6);
- padding: 20px;
- margin: 20px;
- margin-top: 80px;
+.rules {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  position:absolute;
+  bottom:0;
+  width:100%;
+
+
 }
 
 #main-logo {
   height: 10vh;
   width: 10vw;
+  padding: 20px;
+
+}
+
+#top-row{
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: left;
   align-items: center;
+  padding: 0px;
+}
+
+#how_to_play{
+  padding: 20px;
+  padding-left: 500px;
+}
+
+
+#ground_rules {
+  padding: 20px;
 }
