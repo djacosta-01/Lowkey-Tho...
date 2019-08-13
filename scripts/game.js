@@ -11,7 +11,7 @@
        return {'total':t, 'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds};
    }
    function run_clock(id,endtime){
-       var clock = document.getElementById(id);
+       var clock = document.getElementById(timer);
        function update_clock(){
            var t = time_remaining(endtime);
            if (t.minutes < 10) { //time < 10:00
