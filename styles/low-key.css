@@ -45,17 +45,16 @@ img{
 
 #username{
   color: black;
-  text-align: center;
-}
-
-#input{
-  text-align: center;
-}
-#submit {
-  text-align: center;
 }
 
 #ground_rules {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  margin: 20px;
+}
+.how_to_play{
+  display:flex;
+  align-items: flex-end;
   background-color: rgba(255, 255, 255, 0.6);
   padding: 20px;
   margin: 20px;
