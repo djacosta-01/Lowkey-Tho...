@@ -10,25 +10,27 @@ body {
   font-family: monospace;
 }
 
-#timer {
- background-color: purple;
+#clockdiv {
  align-items: flex-start;
  color: white;
  padding: 20px;
+ font-size: 20px;
+ color: black;
 }
 #prompt-card {
   display: flex;
   align-items: center;
- width: 300px;
- height: 150px;
- margin: 20px;
- padding:20px;
+  width: 300px;
+  height: 150px;
+  margin: 20px;
+  padding:20px;
+  background-color: white;
 }
 
 #input-cards {
- display: flex;
- flex-direction: row;
- align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .other-card{
  width: 300px;
