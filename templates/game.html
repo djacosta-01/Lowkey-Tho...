@@ -7,16 +7,22 @@
   </head>
   <body>
     <p id="timer">Timer</p>
-    <div id="prompt-card"></div>
+    <section id="prompt-container">
+      <div id="prompt-card"></div>
+    </section>
     <section id="input-cards">
       <div class="other-card"></div>
       <div class="other-card"></div>
-      <div id="user-input"><textarea rows="10" cols="30"></textarea></div>
+      <div id="user-input">
+        <form method="post" action="/results">
+          <textarea rows="10" cols="30"></textarea>
+          <div id="submit">
+            <button id="submit-button">Submit</button>
+          </div>
+        </form>
+      </div>
       <div class="other-card"></div>
       <div class="other-card"></div>
     </section>
-    <div id="submit">
-      <button id="submit-button">Submit</button>
-    </div>
   </body>
 </html>
