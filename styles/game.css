@@ -1,0 +1,86 @@
+/* body{
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-attachment: fixed;
+ height: 100vh;
+} */
+/* .username {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ background-color: rgba(255, 255, 255, 0.6);
+} */
+#timer {
+ background-color: purple;
+ align-items: flex-start;
+ color: white;
+ padding: 20px;
+}
+#prompt-card {
+  display: flex;
+  align-items: center;
+ background-color: green;
+ width: 150px;
+ height: 100px;
+ margin: 20px;
+ padding:20px;
+}
+/* #username{
+ color: black;
+ text-align: center;
+} */
+/* #input{
+ text-align: center;
+}
+#submit {
+ text-align: center;
+} */
+/* #ground_rules {
+ background-color: rgba(255, 255, 255, 0.6);
+ padding: 20px;
+ margin: 20px;
+} */
+/* .how_to_play {
+ background-color: rgba(255, 255, 255, 0.6);
+ padding: 20px;
+ margin: 20px;
+ margin-top: 80px;
+} */
+#input-cards {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+.other-card{
+ background-color: pink;
+ width: 300px;
+ height: 150px;
+ margin: 20px;
+}
+#user-input {
+ background-color: blue;
+ width: 30vw;
+ height: 20vh;
+ padding: 20px;
+ margin:20px;
+}
+
+input #card-input {
+ width: 300px;
+ height: 500px;
+}
+
+/* #input-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+} */
+
+/* .other-card{
+  background-color: pink;
+  width: 300px;
+  height: 150px;
+  margin: 20px;
+} */
