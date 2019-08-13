@@ -1,17 +1,65 @@
-/* body{
+body {
+  background-image: url("/images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
   background-attachment: fixed;
+  background-position: bottom;
   height: 100vh;
+  padding: 0px;
+  margin: 0px;
+  font-family: monospace;
 }
-#username{
-  color: white;
+
+#username {
+  color: black;
   text-align: center;
 }
-#input{
-  text-align: center;
+
+.usernameB {
+  padding-top: 100px;
 }
-#submit{
-  text-align: center;
-} */
+
+#input {
+ text-align: center;
+}
+
+#submit {
+ text-align: center;
+}
+
+.rules {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  position:absolute;
+  bottom:0;
+  width:100%;
+
+
+}
+
+#main-logo {
+  height: 10vh;
+  width: 10vw;
+  padding: 20px;
+
+}
+
+#top-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  padding: 0px;
+}
+
+#how_to_play{
+  padding: 20px;
+  padding-left: 500px;
+}
+
+
+#ground_rules {
+  padding: 20px;
+}
