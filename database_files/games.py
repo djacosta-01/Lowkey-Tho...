@@ -1,13 +1,31 @@
 from google.appengine.ext import ndb
-class game_session(ndb.Model)
-      game_id = ndb.integerProperty(required=True)
-      players = ndb.keyProperty(repeated=True)
-      current_round_id = ndb.keyProperty
+import helper.py
 
-class round(ndb.Model)
-     round_id = ndb.integerProperty(required=True)
-     players = ndb.keyProperty(repeated=True)
-     answers = ndb.stringProperty(repeated=True)
 
-class answers(ndb.Model)
-    
+
+class userplay(ndb.Model):
+    user = ndb.KeyProperty()
+    game = 'top'
+    points = 0
+    round = 3
+    answer = 'hai'
+    position = 1
+    roundPoints =
+
+
+
+class answers(ndb.Model):
+    player_id =
+
+
+player = userplay()
+
+player2 = userplay()
+
+player3 = userplay()
+
+player4 = userplay()
+
+player5 = userplay()
+
+player6 = userplay()
