@@ -32,24 +32,27 @@ class GamePage(webapp2.RequestHandler):
 
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
-
         template = the_jinja_env.get_template('templates/results.html')
         self.response.write(template.render())
     def post(self):
         answer = self.request.get('answer')
-        # self.response.write("Prompt: {}".format(card))
         self.response.write("Your answer: {}".format(answer))
         template = the_jinja_env.get_template('templates/results.html')
         self.response.write(template.render())
 
-class SessionPage(webapp2.RequestHandler):
+class JoinPage(webapp2.RequestHandler):
+    def post(self):
+        template = the_jinja_env.get_template('templates/join-game.html')
+        # games = Game.query().fetch()
+        games = ["top",  "bottom", "strange"]
+        self.response.write(template.render({"games": games}))
     def get(self):
-        template = the_jinja_env.get_template('templates/session-selector.html')
+        template = the_jinja_env.get_template('templates/join-game.html')
         self.response.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-    ('/session', SessionPage),
+    ('/join', JoinPage),
     ('/game', GamePage),
     ('/results', ResultsPage)
 ], debug=True)

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Low Key Tho... Session Selector</title>
+  </head>
+  <body>
+    <form method="post" action="/game">
+      <select>
+        {% for game in games %}
+          <option>{{ game }}</option>
+        {% endfor %}
+      </select>
+      <button id="play-button">Play!</button>
+    </form>
+  </body>
+</html>
