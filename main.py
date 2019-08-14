@@ -2,15 +2,45 @@ import webapp2
 import jinja2
 import os
 from database_files.cards import get_card
+from google.appengine.api import users
+from database_files.user import User
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+def createUser(name, email):
+    user = User(
+        username = name,
+        email = email,
+
+    )
+    user.put()
+
+
+
 class MainPage(webapp2.RequestHandler):
     def get(self):
         template = the_jinja_env.get_template('templates/main.html')
+        googleUser = users.get_current_user()
+        if googleUser:
+            db_user = User.query().filter(User.email == googleUser.email()).get()
+            if not db_user:
+                createUser(googleUser.nickname(), googleUser.email())
+            #allow choosing username
+            logout_url = users.create_logout_url('/')
+            self.response.write(template.render({
+            'url': logout_url
+            }
+
+            ))
+        else:
+             login_url = users.create_login_url('/')
+             self.response.write(template.render({
+             'url': login_url
+             }))
+
         self.response.write(template.render())
 
 class GamePage(webapp2.RequestHandler):
@@ -49,6 +79,8 @@ class JoinPage(webapp2.RequestHandler):
     def get(self):
         template = the_jinja_env.get_template('templates/join-game.html')
         self.response.write(template.render())
+
+
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
