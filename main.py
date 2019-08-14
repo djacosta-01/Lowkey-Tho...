@@ -47,7 +47,7 @@ class GamePage(webapp2.RequestHandler):
     def post(self):
         username = self.request.get('query')
         card = {
-        "prompt": get_card()
+        "prompt": get_promt()
         }
         template = the_jinja_env.get_template('templates/game.html')
         self.response.write("Username: {}".format(username))
