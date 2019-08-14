@@ -65,6 +65,12 @@ body {
   text-align: center;
 }
 
+#main-logo:hover {
+  height: 12vh;
+  height:35vmin;
+  width:35vmin;
+}
+
 #how_to_play{
   padding: 20px;
   display:block;
@@ -78,5 +84,26 @@ body {
   display:block;
   height:20vh;
   width:30vw;
+}
+#login-area{
+  padding: 20px;
+}
 
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+a:hover{
+  font-size: 30px;
+}
+
+input.button{
+  background-color: white;
+}
+
+input.button:hover{
+  background-color: #f0f0f0;
 }
