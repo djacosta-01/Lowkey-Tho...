@@ -15,12 +15,16 @@ body {
   align-items: center;
 }
  .card{
-  background-color: pink;
+  background-color: white;
   width: 300px;
   height: 150px;
   margin: 20px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top:10px;
 }
 .card:hover{
-  box-shadow: 3px 3px 3px black;
-  text-shadow: 2px 2px 2px white;
+  box-shadow: 5px 9px 7px black;
+  text-shadow: 4px 4px 4px grey;
+  transition: 1s;
 }

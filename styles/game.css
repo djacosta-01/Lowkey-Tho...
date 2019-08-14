@@ -60,3 +60,10 @@ input #card-input {
   background-color: white;
   box-shadow: 0 0 0 1pt black;
 }
+
+.text-input{
+  text-align: center;
+}
+#submit-button{
+  text-align: center;
+}
