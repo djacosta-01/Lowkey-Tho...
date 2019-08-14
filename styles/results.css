@@ -27,6 +27,7 @@ body {
   padding-left: 10px;
   padding-top:10px;
 }
+
 .card:hover{
   box-shadow: 5px 9px 7px black;
   text-shadow: 4px 4px 4px grey;

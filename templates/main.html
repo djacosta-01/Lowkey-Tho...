@@ -12,52 +12,47 @@
   </head>
 
   <body>
-  <a href = {{url}}>Login </a>
 
-    <section id="top-row">
-      <img id="main-logo" src="/images/logo.png" alt="logo">
+    <section id="login-area">
+      <a href = {{url}}>Login </a>
       <section class = "usernameBox">
-
         <form method="post" action="/join">
-          <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-          <script>
-            function onSignIn(googleUser) {
-              // Useful data for your client-side scripts:
-              var profile = googleUser.getBasicProfile();
-              console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-              console.log('Full Name: ' + profile.getName());
-              console.log('Given Name: ' + profile.getGivenName());
-              console.log('Family Name: ' + profile.getFamilyName());
-              console.log("Image URL: " + profile.getImageUrl());
-              console.log("Email: " + profile.getEmail());
 
               // The ID token you need to pass to your backend:
               var id_token = googleUser.getAuthResponse().id_token;
               console.log("ID Token: " + id_token);
             }
           </script>
-        </section>
+        </form>
+      </section>
     </section>
 
-        <form method="post" action="/join">
-          <section class = "usernameB">
-            <p id = "username">Enter a username:</p>
-            <p id = "input"><input class = "box" name="query"></p>
-            <p id = "submit"><input class = "button" type="submit" value="Username"></p>
-          </section>
-        </form>
+    <div id="logo-area">
+      <img id="main-logo" src="/images/logo.png" alt="logo">
+    </div>
 
-          <footer class = "rules">
-            <p id="ground_rules"> Ground rules: This game gives the player freedom to express themselves.
-              This freedom is an expression of trust from us, the devs, that you, the user, know
-              better than to use racist, offensive, bigoted content. Remember: Your words are your own.</p>
-            <p id="how_to_play"> How to play: You will see a card with a prompt in the center of your
-              screen. Then you answer the prompt with the blank card in the bottom of your screen by
-              selecting it and typing a creative and hilarious response. Once everyone
-              has submitted their cards or time has run out, you can vote for the card
-              that you thought had the funniest response (You can't vote for yourself).
-              The person with the most votes wins the round.</p>
-          </footer>
-          <script src='scripts/main.js'></script>
+    <div></div>
+
+    <section class = "usernameB">
+      <form method="post" action="/join">
+        <p id = "username">Enter a username:</p>
+        <p id = "input"><input class = "box" name="query"></p>
+        <p id = "submit"><input class = "button" type="submit" value="Username"></p>
+      </form>
+    </section>
+
+    <p id="ground_rules"> Ground rules: This game gives the player freedom to express themselves.
+        This freedom is an expression of trust from us, the devs, that you, the user, know
+        better than to use racist, offensive, bigoted content. Remember: Your words are your own.</p>
+
+    <p></p>
+
+    <p id="how_to_play"> How to play: You will see a card with a prompt in the center of your
+        screen. Then you answer the prompt with the blank card in the bottom of your screen by
+        selecting it and typing a creative and hilarious response. Once everyone
+        has submitted their cards or time has run out, you can vote for the card
+        that you thought had the funniest response (You can't vote for yourself).
+        The person with the most votes wins the round.</p>
+    <script src='scripts/main.js'></script>
   </body>
 </html>

@@ -41,7 +41,7 @@ class MainPage(webapp2.RequestHandler):
              'url': login_url
              }))
 
-        self.response.write(template.render())
+        # self.response.write(template.render())
 
 class GamePage(webapp2.RequestHandler):
     def post(self):
