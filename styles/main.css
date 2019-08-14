@@ -54,10 +54,16 @@ body {
 }
 
 #main-logo {
-  height: 10vh;
-  padding: 20px;
+  margin: auto;
+  margin-top:100px;
+  margin-bottom:-10px;
+  height:30vmin;
+  width:30vmin;
 }
 
+#logo-area{
+  text-align: center;
+}
 
 #how_to_play{
   padding: 20px;
