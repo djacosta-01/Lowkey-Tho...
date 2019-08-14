@@ -5,6 +5,6 @@ for (let i = 0; i < vote.length; i++){
   vote[i].addEventListener('click', function(){
     vote[i].style = '20px';
     vote[i].style.transform = 'rotate(360deg)';
-    vote[i].style.transition = '3s all';
+    vote[i].style.transition = '1s all';
   });
 }

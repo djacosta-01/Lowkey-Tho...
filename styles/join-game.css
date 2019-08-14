@@ -1,0 +1,20 @@
+body {
+  background-image: url("/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+  font-family: monospace;
+}
+
+form {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}

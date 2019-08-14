@@ -62,8 +62,8 @@ input #card-input {
 }
 
 .text-input{
-  text-align: center;
+  text-align:center;
 }
-#submit-button{
+#submit{
   text-align: center;
 }

@@ -1,18 +1,10 @@
-let submit = document.getElementById('submit');
+'use strict';
+
+let s = document.getElementById('submit');
 
 let input = document.getElementById('submit');
 
-submit.addEventListener('click', submit())
-
-function submit(){
-  console.log(input.innerHTML)
-}
-
-let submit = document.getElementById('submit');
-
-let input = document.getElementById('submit');
-
-submit.addEventListener('click', submit())
+s.addEventListener('click', submit())
 
 function submit(){
   console.log(input.innerHTML)
