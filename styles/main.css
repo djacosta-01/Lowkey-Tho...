@@ -63,13 +63,6 @@ body {
   grid-column: 2;
 }
 
-#top-row{
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  padding: 0px;
-}
 
 #how_to_play{
   padding: 20px;
