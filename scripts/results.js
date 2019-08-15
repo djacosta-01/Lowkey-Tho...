@@ -26,7 +26,15 @@ for (let i = 0; i < vote.length; i++){
     if (canVote === true) {
       vote[i].style.transform = 'rotate(360deg)';
       vote[i].style.transition = '1s all';
-      vote[i].childNodes[1].src = "/images/votebutton.png"
+      vote[i].childNodes[1].src = "/images/votebutton.png";
+      // Update the score in the database
+      fetch('/scores', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          order: i + 1
+        })
+      }).then(r => r.text()).then(text => { console.log(text); }).catch(e => console.log(e));
       canVote = false;
     }
   });

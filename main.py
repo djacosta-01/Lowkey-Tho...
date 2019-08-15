@@ -1,6 +1,7 @@
 import webapp2
 import jinja2
 import os
+import json
 from database_files.cards import get_promt, get_answer, get_user_model, get_play_from_user
 from google.appengine.api import users
 from database_files.user import User
@@ -77,11 +78,21 @@ class JoinPage(webapp2.RequestHandler):
         template = the_jinja_env.get_template('templates/join-game.html')
         self.response.write(template.render())
 
-
+class ScoreHandler(webapp2.RequestHandler):
+    def post(self):
+        order = json.loads(self.request.body)['order']
+        print('I RECEIVED {} FROM JAVASCRIPT'.format(order))
+        # Get the user with the given order
+        # Get the play for that user, play
+        # play.score += 1
+        # play.put()
+        self.response.headers['Content-Type'] = 'text/plain'
+        self.response.write('Score updated')
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/join', JoinPage),
     ('/game', GamePage),
-    ('/results', ResultsPage)
+    ('/results', ResultsPage),
+    ('/scores', ScoreHandler)
 ], debug=True)
