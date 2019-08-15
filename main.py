@@ -6,6 +6,8 @@ from database_files.cards import get_promt, get_answer, get_user_model, is_round
 from google.appengine.api import users
 from database_files.user import User
 from database_files.games import Play
+# from database_files.seed import seed_data
+
 
 
 the_jinja_env = jinja2.Environment(
@@ -109,6 +111,12 @@ class ScoreHandler(webapp2.RequestHandler):
             self.response.write('true')
         else:
             self.response.write('false')
+
+
+class SeedHandler(webapp2.RequestHandler):
+    def get(self):
+        seed_data()
+        self.response.write('l0W key s33ded')
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
