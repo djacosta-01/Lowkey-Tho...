@@ -7,15 +7,14 @@ for (let i = 0; i < vote.length; i++){
   //add eventListener to each element with a card class
   vote[i].addEventListener('mouseenter', function(){
     if (canVote === true) {
-      button = vote[i].childNodes[1];
-      console.log(button)
+      button = vote[i].childNodes[0];
+      console.log(button);
       button.style.opacity = '1';
     }
   })
   vote[i].addEventListener('mouseleave', function(){
-    button = vote[i].childNodes[1];
+    button = vote[i].childNodes[0];
     console.log(button.src);
-    // button.src != "/images/votebutton.png"
     if(canVote===true){
       button.style.opacity = '0';
     }
