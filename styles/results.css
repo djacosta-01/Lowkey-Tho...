@@ -41,6 +41,15 @@ body {
   position: absolute;
   right: 15px;
   bottom: 15px;
+<<<<<<< HEAD
   display: none;
 
+=======
+  opacity: 0;
+}
+
+.card img:hover{
+  opacity:1;
+  transition: 1s;
+>>>>>>> 8462fb8804310b2a09ac2cdbbfa72ee84a1f7d6f
 }
