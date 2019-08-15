@@ -15,7 +15,8 @@ for (let i = 0; i < vote.length; i++){
   vote[i].addEventListener('mouseleave', function(){
     button = vote[i].childNodes[1];
     console.log(button.src);
-    if(button.src != "/images/votebutton.png"){
+    // button.src != "/images/votebutton.png"
+    if(canVote===true){
       button.style.opacity = '0';
     }
   })
