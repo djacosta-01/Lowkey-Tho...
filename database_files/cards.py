@@ -3,12 +3,12 @@ from google.appengine.api import users
 from user import User
 from games import Play
 
-
 def make_card(promt):
     cards.append(promt)
 
 sub = 'hey'
 
+<<<<<<< HEAD
 def get_card():
     cards = ['Low-key though','The song that is the low-keyiest of bangers is ',
     'Low-key though when I was a kid', 'Low-key tho, the thing about pets is',
@@ -17,13 +17,30 @@ def get_card():
     'Low-key tho, why does everyone think that', 'Low-key tho, I was this many years old when I realized',
     'I lowkey hate it when', 'I lowkey love how','I thought by now I would have',
     'Low-key, my guilty pleasure is', 'Low-key, the weirdest thing I like eating is']
+=======
+
+def get_promt():
+    cards = [
+        'Low-key though',
+        'The song that is the lowkeyiest of bangers is',
+        'Low-key tho, the thing about pets is',
+        'My mother was low-key right when she said',
+        "Low-key if I didn't waste my time on YouTube",
+        'The lair is low-key',
+        'Low-key tho, I really want to',
+        'I low-key hate it when',
+        'Low-key tho, why does everyone think that',
+        'Low-key tho, I was this many years old when I realized',
+        'I lowkey hate it when',
+        'I lowkey love how',
+        'I thought by now I would have',
+        'Low-key, my guilty pleasure is',
+        'Low-key, the weirdest thing I like eating is']
+>>>>>>> 5bee19aeef0b5518944e5044504b78de83a3ffed
     return cards[random.randint(0,len(cards)-1)] + '...'
 
 def make_card(prompt):
     cards.append(prompt)
-
-
-
 
 answers = []
 def get_answer():
@@ -37,7 +54,6 @@ def is_game_done():
         done = True
     return done
 
-
 def get_user_model():
     email = users.get_current_user().email()
     user = User.query().filter(User.email == email).get()
@@ -45,7 +61,10 @@ def get_user_model():
 
 #check to make sure user is logged in/getuser != null
 def get_play_from_user(user_model):
+    user_model = get_user_model()
     play_model = Play.query().filter(Play.user == user_model.key).get()
+    if not play_model:
+        play_model = Play(user=user_model.key)
     return play_model
 
 def get_game_from_play_model(play_model):
