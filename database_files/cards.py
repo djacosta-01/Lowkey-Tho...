@@ -3,7 +3,6 @@ from google.appengine.api import users
 from user import User
 from games import Play
 
-
 def make_card(promt):
     cards.append(promt)
 
@@ -51,7 +50,10 @@ def get_user_model():
 
 #check to make sure user is logged in/getuser != null
 def get_play_from_user(user_model):
+    user_model = get_user_model()
     play_model = Play.query().filter(Play.user == user_model.key).get()
+    if not play_model:
+        play_model = Play(user=user_model.key)
     return play_model
 
 def get_game_from_play_model(play_model):

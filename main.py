@@ -40,15 +40,14 @@ class GamePage(webapp2.RequestHandler):
     def post(self):
         username = self.request.get('query')
         card = {
-        "prompt": get_promt()
+            "prompt": get_promt()
         }
         template = the_jinja_env.get_template('templates/game.html')
         self.response.write("Username: {}".format(username))
         self.response.write(template.render(card))
     def get(self):
-        username = self.request.get('query')
         card = {
-            "prompt": get_card()
+            "prompt": get_promt()
         }
         template = the_jinja_env.get_template('templates/game.html')
         self.response.write(template.render(card))
@@ -61,11 +60,12 @@ class ResultsPage(webapp2.RequestHandler):
         answer = self.request.get('answer')
         user = get_user_model()
         user_session = get_play_from_user(user)
-        user_session.answer = 'answer'
+        user_session.answer = answer
         user_session.put()
-        self.response.write("Your answer: {}".format(answer))
         template = the_jinja_env.get_template('templates/results.html')
-        self.response.write(template.render())
+        self.response.write(template.render({
+            'answer': answer
+        }))
 
 class JoinPage(webapp2.RequestHandler):
     def post(self):
