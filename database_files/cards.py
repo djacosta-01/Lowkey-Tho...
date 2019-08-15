@@ -9,10 +9,6 @@ def make_card(promt):
 
 sub = 'hey'
 
-<<<<<<< HEAD
-def get_promt():
-    cards = ['Low-key though','The song that is the lowkeyiest of bangers is ', 'Low-key though when I was a kid', 'The thing about pets is', 'My mother was low-ky right when she said','Lowkey if I did not waste my time on youtube', 'The lair is', 'Lowkey though I really want to','I hate it when', 'Why does everyone think that', 'Lowkey tho I was this many years old when I realized', 'I hate it when', 'I love how','I Thought by now I would have', '']
-=======
 def get_card():
     cards = ['Low-key though','The song that is the low-keyiest of bangers is ',
     'Low-key though when I was a kid', 'Low-key tho, the thing about pets is',
@@ -21,7 +17,6 @@ def get_card():
     'Low-key tho, why does everyone think that', 'Low-key tho, I was this many years old when I realized',
     'I lowkey hate it when', 'I lowkey love how','I thought by now I would have',
     'Low-key, my guilty pleasure is', 'Low-key, the weirdest thing I like eating is']
->>>>>>> 7fffff1d82aaa5142ca81970bff260a711a4dfe6
     return cards[random.randint(0,len(cards)-1)] + '...'
 
 def make_card(prompt):
