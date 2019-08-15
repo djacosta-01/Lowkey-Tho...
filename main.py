@@ -2,10 +2,11 @@ import webapp2
 import jinja2
 import os
 import json
-from database_files.cards import get_promt, get_answer, get_user_model, get_play_from_user
+from database_files.cards import get_promt, get_answer, get_user_model, is_round_fully_answered, get_play_from_user
 from google.appengine.api import users
 from database_files.user import User
 from database_files.games import Play
+
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -85,12 +86,15 @@ class ScoreHandler(webapp2.RequestHandler):
         print('I RECEIVED {} FROM JAVASCRIPT'.format(order))
         play = Play.query().filter(Play.order == order).get()
         self.response.headers['Content-Type'] = 'text/plain'
-        if play:
+        if is_round_fully_answered():
+            order = json.loads(self.request.body)['order']
+            print('I RECEIVED {} FROM JAVASCRIPT'.format(order))
+            play = Play.query().filter(Play.order == order).get()
             play.score += 1
             play.put()
             self.response.write('Score updated')
         else:
-            self.response.write('Score NOT updated, we are still working')
+            self.response.write('Please wait until all players have submitted')
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),

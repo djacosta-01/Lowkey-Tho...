@@ -34,7 +34,7 @@ for (let i = 0; i < vote.length; i++){
         body: JSON.stringify({
           order: i + 1,
         })
-      }).then(r => r.text()).then(text => { console.log(text); }).catch(e => console.log(e));
+      }).then(r => r.text()).then(text => { alert(text); }).catch(e => console.log(e));
       canVote = false;
     }
   });

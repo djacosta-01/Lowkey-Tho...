@@ -10,7 +10,7 @@ function submit(){
   console.log(input.innerHTML)
 }
 
-
+let answer = document.
 
 "submit-button"
 // add are you sure
