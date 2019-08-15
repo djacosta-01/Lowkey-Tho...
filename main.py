@@ -46,7 +46,6 @@ class GamePage(webapp2.RequestHandler):
             "prompt": get_promt()
         }
         template = the_jinja_env.get_template('templates/game.html')
-        self.response.write("Username: {}".format(username))
         self.response.write(template.render(card))
     def get(self):
         card = {
@@ -58,16 +57,31 @@ class GamePage(webapp2.RequestHandler):
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
         template = the_jinja_env.get_template('templates/results.html')
-        self.response.write(template.render())
+        cards=["Cece deserves more treats", "Bing is underrated", "Scoot-scoot", "this audience is great!", "I've eaten so many pop-tarts"]
+        self.response.write(template.render({
+            'card1':cards[0],
+            'card2':cards[1],
+            'card3':cards[2],
+            'card4':cards[3],
+            'card5':cards[4]
+        }))
     def post(self):
+        print('here we are')
+        cards=["Cece deserves more treats", "Bing is underrated", "Scoot-scoot", "this audience is great!", "I've eaten so many pop-tarts"]
         answer = self.request.get('answer')
         user = get_user_model()
         user_session = get_play_from_user(user)
         user_session.answer = answer
         user_session.put()
         template = the_jinja_env.get_template('templates/results.html')
+        print(cards)
         self.response.write(template.render({
-            'answer': answer
+            'answer': answer,
+            'card1':cards[0],
+            'card2':cards[1],
+            'card3':cards[2],
+            'card4':cards[3],
+            'card5':cards[4]
         }))
 
 class JoinPage(webapp2.RequestHandler):
