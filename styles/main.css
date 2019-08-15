@@ -13,6 +13,10 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+form {
+  visibility: hidden;
+}
+
 #username {
   color: black;
   text-align: center;
