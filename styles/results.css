@@ -33,6 +33,7 @@ body {
   box-shadow: 5px 9px 7px black;
   text-shadow: 4px 4px 4px grey;
   transition: 1s;
+
 }
 
 .card img {
@@ -40,4 +41,10 @@ body {
   position: absolute;
   right: 15px;
   bottom: 15px;
+  opacity: 0;
+}
+
+.card img:hover{
+  opacity:1;
+  transition: 1s;
 }
