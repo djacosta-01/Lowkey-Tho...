@@ -2,7 +2,7 @@ import webapp2
 import jinja2
 import os
 import json
-from database_files.cards import get_promt, get_answer, get_user_model, is_round_fully_answered, get_play_from_user
+from database_files.cards import get_promt, get_cheat, get_answer, get_user_model, is_round_fully_answered, get_play_from_user
 from google.appengine.api import users
 from database_files.user import User
 from database_files.games import Play
@@ -45,13 +45,13 @@ class GamePage(webapp2.RequestHandler):
     def post(self):
         username = self.request.get('query')
         card = {
-            "prompt": get_promt()
+            "prompt": get_cheat()
         }
         template = the_jinja_env.get_template('templates/game.html')
         self.response.write(template.render(card))
     def get(self):
         card = {
-            "prompt": get_promt()
+            "prompt": get_cheat()
         }
         template = the_jinja_env.get_template('templates/game.html')
         self.response.write(template.render(card))
@@ -68,7 +68,6 @@ class ResultsPage(webapp2.RequestHandler):
             'card5':cards[4]
         }))
     def post(self):
-        print('here we are')
         cards=["Cece deserves more treats", "Bing is underrated", "Scoot-scoot", "this audience is great!", "I've eaten so many pop-tarts"]
         answer = self.request.get('answer')
         user = get_user_model()

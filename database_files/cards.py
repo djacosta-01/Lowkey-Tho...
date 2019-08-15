@@ -10,10 +10,11 @@ sub = 'hey'
 
 
 def get_cheat():
-    cards = [
-        'Low-key though',
-        ]
-    return cards[random.randint(0,len(cards)-1)] + '...'
+    return 'Low-key tho...'
+    # cards = [
+    #
+    #     ]
+    # cards[random.randint(0,len(cards)-1)] + '...'
 
 def get_promt():
     cards = [
@@ -22,7 +23,7 @@ def get_promt():
         'Low-key tho, the thing about pets is',
         'My mother was low-key right when she said',
         "Low-key if I didn't waste my time on YouTube",
-        'The lair is low-key',
+        'The Lair is low-key',
         'Low-key tho, I really want to',
         'I low-key hate it when',
         'Low-key tho, why does everyone think that',
