@@ -32,7 +32,7 @@ body {
 .card:hover{
   box-shadow: 5px 9px 7px black;
   text-shadow: 4px 4px 4px grey;
-  transition: 1s;
+  transition: .5s;
 
 }
 
@@ -46,5 +46,5 @@ body {
 
 .card img:hover{
   opacity:1;
-  transition: 1s;
+  transition: .5s;
 }
