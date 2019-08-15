@@ -8,6 +8,13 @@ def make_card(promt):
 
 sub = 'hey'
 
+
+def get_cheat():
+    cards = [
+        'Low-key though',
+        ]
+    return cards[random.randint(0,len(cards)-1)] + '...'
+
 def get_promt():
     cards = [
         'Low-key though',
