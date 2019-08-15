@@ -24,9 +24,6 @@ for (let i = 0; i < vote.length; i++){
   vote[i].addEventListener('click', function(){
     vote[i].style = '20px';
     if (canVote === true) {
-      vote[i].style.transform = 'rotate(360deg)';
-      vote[i].style.transition = '1s all';
-      vote[i].childNodes[1].src = "/images/votebutton.png";
       // Update the score in the database
       fetch('/scores', {
         method: 'POST',
@@ -34,8 +31,17 @@ for (let i = 0; i < vote.length; i++){
         body: JSON.stringify({
           order: i + 1,
         })
-      }).then(r => r.text()).then(text => { alert(text); }).catch(e => console.log(e));
-      canVote = false;
+      }).then(r => r.text()).then(text => {
+        if (text === 'true') {
+          vote[i].style.transform = 'rotate(360deg)';
+          vote[i].style.transition = '1s all';
+          vote[i].childNodes[1].src = "/images/votebutton.png";
+          canVote = false;
+          alert('Thanks! Vote Counted');
+        } else {
+          alert('Please wait until all players have submitted');
+        }
+      }).catch(e => console.log(e));
     }
   });
 }

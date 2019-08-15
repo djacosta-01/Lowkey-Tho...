@@ -92,9 +92,9 @@ class ScoreHandler(webapp2.RequestHandler):
             play = Play.query().filter(Play.order == order).get()
             play.score += 1
             play.put()
-            self.response.write('Score updated')
+            self.response.write('true')
         else:
-            self.response.write('Please wait until all players have submitted')
+            self.response.write('false')
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
