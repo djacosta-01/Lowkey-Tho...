@@ -45,17 +45,6 @@ form {
  text-align: center;
 }
 
-.rules {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: absolute;
-  bottom:0;
-  width:100%;
-  margin: auto;
-  padding: 10px;
-}
 
 #main-logo {
   margin: auto;
@@ -80,6 +69,8 @@ form {
   display:block;
   height:20vh;
   width: 30vw;
+  grid-row: 3;
+  grid-column: 3;
 }
 
 
@@ -88,7 +79,10 @@ form {
   display:block;
   height:20vh;
   width:30vw;
+  grid-row: 3;
+  grid-column: 1;
 }
+
 #login-area{
   padding: 20px;
 }
