@@ -5,8 +5,6 @@ from database_files.cards import get_promt, get_answer, get_user_model, get_play
 from google.appengine.api import users
 from database_files.user import User
 
-
-
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
@@ -16,32 +14,27 @@ def createUser(name, email):
     user = User(
         username = name,
         email = email,
-
     )
     user.put()
-
-
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
         template = the_jinja_env.get_template('templates/main.html')
-        googleUser = users.get_current_user()
-        if googleUser:
-            db_user = User.query().filter(User.email == googleUser.email()).get()
+        google_user = users.get_current_user()
+        if google_user:
+            db_user = User.query().filter(User.email == google_user.email()).get()
             if not db_user:
-                createUser(googleUser.nickname(), googleUser.email())
-            #allow choosing username
+                createUser(google_user.nickname(), google_user.email())
             logout_url = users.create_logout_url('/')
             self.response.write(template.render({
-            'url': logout_url
-            }
-
-            ))
+                'nickname': google_user.nickname(),
+                'logout_url': logout_url
+            }))
         else:
-             login_url = users.create_login_url('/')
-             self.response.write(template.render({
-             'url': login_url
-             }))
+            login_url = users.create_login_url('/')
+            self.response.write(template.render({
+                'login_url': login_url
+            }))
 
 class GamePage(webapp2.RequestHandler):
     def post(self):

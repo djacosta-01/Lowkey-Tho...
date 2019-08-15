@@ -13,8 +13,13 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-form {
-  visibility: hidden;
+#username, #input {
+  display: none;
+}
+
+#submit input {
+  font-size: 20px;
+  padding: 3px 10px;
 }
 
 #username {
