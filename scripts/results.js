@@ -32,7 +32,7 @@ for (let i = 0; i < vote.length; i++){
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-          order: i + 1
+          order: i + 1,
         })
       }).then(r => r.text()).then(text => { console.log(text); }).catch(e => console.log(e));
       canVote = false;

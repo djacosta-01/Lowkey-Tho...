@@ -5,6 +5,7 @@ import json
 from database_files.cards import get_promt, get_answer, get_user_model, get_play_from_user
 from google.appengine.api import users
 from database_files.user import User
+from database_files.games import Play
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -82,12 +83,14 @@ class ScoreHandler(webapp2.RequestHandler):
     def post(self):
         order = json.loads(self.request.body)['order']
         print('I RECEIVED {} FROM JAVASCRIPT'.format(order))
-        # Get the user with the given order
-        # Get the play for that user, play
-        # play.score += 1
-        # play.put()
+        play = Play.query().filter(Play.order == order).get()
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('Score updated')
+        if play:
+            play.score += 1
+            play.put()
+            self.response.write('Score updated')
+        else:
+            self.response.write('Score NOT updated, we are still working')
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
