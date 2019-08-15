@@ -1,9 +1,11 @@
 import webapp2
 import jinja2
 import os
-from database_files.cards import get_card
+from database_files.cards import get_promt, get_answer, get_user_model, get_play_from_user
 from google.appengine.api import users
 from database_files.user import User
+
+
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -41,8 +43,6 @@ class MainPage(webapp2.RequestHandler):
              'url': login_url
              }))
 
-        self.response.write(template.render())
-
 class GamePage(webapp2.RequestHandler):
     def post(self):
         username = self.request.get('query')
@@ -55,7 +55,7 @@ class GamePage(webapp2.RequestHandler):
     def get(self):
         username = self.request.get('query')
         card = {
-        "prompt": get_card()
+            "prompt": get_card()
         }
         template = the_jinja_env.get_template('templates/game.html')
         self.response.write(template.render(card))
@@ -66,6 +66,10 @@ class ResultsPage(webapp2.RequestHandler):
         self.response.write(template.render())
     def post(self):
         answer = self.request.get('answer')
+        user = get_user_model()
+        user_session = get_play_from_user(user)
+        user_session.answer = 'answer'
+        user_session.put()
         self.response.write("Your answer: {}".format(answer))
         template = the_jinja_env.get_template('templates/results.html')
         self.response.write(template.render())

@@ -1,4 +1,8 @@
 import random
+from google.appengine.api import users
+from user import User
+from games import Play
+
 
 def make_card(promt):
     cards.append(promt)
@@ -17,29 +21,37 @@ def make_card(prompt):
 
 answers = []
 def get_answer():
-    while len(answers)=< 5:
+    while len(answers) <= 5:
         answers.append(sub)
     return answers
 
 def is_game_done():
     done = False
-    if len(answers) == 5
+    if len(answers) == 5:
         done = True
     return done
 
 
-
 def get_user_model():
-    pass
+    email = users.get_current_user().email()
+    user = User.query().filter(User.email == email).get()
+    return user
 
-def get_game_from_user(user_model):
-    game = Play.query().filter(Play.user == user_model).get()
-    return game
+#check to make sure user is logged in/getuser != null
+def get_play_from_user(user_model):
+    play_model = Play.query().filter(Play.user == user_model.key).get()
+    return play_model
 
+def get_game_from_play_model(play_model):
+    return play_model.game
 
+def get_all_plays_from_game(game):
+    plays = Play.query().filter(Play.game == game).fetch()
+    return plays
 
-
-
-
-
-def get_all_game_answers
+def is_round_fully_answered():
+    user = get_user_model()
+    user_session = get_play_from_user(user)
+    game = get_game_from_play_model(user_session)
+    list_of_plays = get_all_plays_from_game(game)
+    return len(list_of_plays) <= 5

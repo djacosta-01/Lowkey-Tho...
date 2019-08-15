@@ -1,5 +1,4 @@
 from google.appengine.ext import ndb
-import helper.py
 import user
 
 
@@ -11,20 +10,3 @@ class Play(ndb.Model):
     answer = 'hai'
     order = 1
     roundPoints = 0
-
-
-
-player = userplay()
-
-player2 = userplay()
-
-player3 = userplay()
-
-player4 = userplay()
-
-player5 = userplay()
-
-player6 = userplay()
-
-
-def game_loop():

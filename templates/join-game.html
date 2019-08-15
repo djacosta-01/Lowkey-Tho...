@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="/styles/join-game.css">
   </head>
   <body>
+
+    <h1 class="instructions">Select a game session to play in:</h1>
+    <p class="instructions">Make sure it's the same session as your friends!</p>
     <form method="post" action="/game">
       <select>
         {% for game in games %}
